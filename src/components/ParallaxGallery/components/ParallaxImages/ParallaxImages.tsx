@@ -24,8 +24,9 @@ const ParallaxImages = (props: Gallery) => {
                 src={image.src}
                 alt={image.name}
                 className={styles.image}
-                loading="eager"
-                fill
+                priority
+                width={320}
+                height={416}
               />
             </ParallaxEffect>
           );
