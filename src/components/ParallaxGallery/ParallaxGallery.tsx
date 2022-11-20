@@ -7,8 +7,8 @@ const ParallaxGallery = () => {
       <div className={styles.container}>
         <ParallaxImages />
         <div className={styles.content}>
-          <h1>Building Beyond</h1>
-          <p>
+          <h1 className={styles.title}>Building Beyond</h1>
+          <p className={styles.text}>
             We are a London based architecture and design studio with a global
             reputation for creating innovative spaces.
           </p>
