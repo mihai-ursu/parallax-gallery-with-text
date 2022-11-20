@@ -1,11 +1,16 @@
 import ParallaxImages from "./components/ParallaxImages/ParallaxImages";
 import styles from "./ParallaxGallery.module.scss";
+import ParallaxGalleryProps from "./ParallaxGalleryProps";
 
-const ParallaxGallery = () => {
+const ParallaxGallery = (props: ParallaxGalleryProps) => {
+  const { galleries } = props;
+
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
-        <ParallaxImages />
+        {galleries.map((gallery) => (
+          <ParallaxImages key={gallery.galleryName} {...gallery} />
+        ))}
         <div className={styles.content}>
           <h1 className={styles.title}>Building Beyond</h1>
           <p className={styles.text}>
