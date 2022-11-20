@@ -8,5 +8,6 @@ export interface Gallery {
   images: {
     name: string;
     src: string;
+    parallaxEffectStrength: number;
   }[];
 }

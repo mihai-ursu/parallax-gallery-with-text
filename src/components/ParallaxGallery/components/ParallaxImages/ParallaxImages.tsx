@@ -1,6 +1,7 @@
 import { Gallery } from "components/ParallaxGallery/ParallaxGalleryProps";
 import combineClasses from "helpers/combineClasses";
 import Image from "next/image";
+import ParallaxEffect from "../ParallaxEffect/ParallaxEffect";
 import styles from "./ParallaxImages.module.scss";
 
 const ParallaxImages = (props: Gallery) => {
@@ -11,11 +12,13 @@ const ParallaxImages = (props: Gallery) => {
       <div className={styles.galleryWrapper}>
         {images.map((image, index) => {
           const positionClass =
-            index % 2 === 0 ? styles.topLeft : styles.bottomRight;
+            index % 2 === 0 ? styles.bottomLeft : styles.topRight;
           return (
-            <div
+            <ParallaxEffect
               key={image.name}
-              className={combineClasses(styles.imageWrapper, positionClass)}
+              offset={image.parallaxEffectStrength}
+              isEffectActive={true}
+              cssClass={combineClasses(positionClass, styles.imageWrapper)}
             >
               <Image
                 src={image.src}
@@ -23,7 +26,7 @@ const ParallaxImages = (props: Gallery) => {
                 className={styles.image}
                 fill
               />
-            </div>
+            </ParallaxEffect>
           );
         })}
       </div>
