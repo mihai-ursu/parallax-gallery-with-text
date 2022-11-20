@@ -1,5 +1,5 @@
-export default interface ParallaxProps {
-    children: React.ReactNode;
-    offset?: number
-    isEffectActive?: boolean;
+export default interface ParallaxEffectProps {
+  children: React.ReactNode;
+  offset?: number;
+  isEffectActive?: boolean;
 }

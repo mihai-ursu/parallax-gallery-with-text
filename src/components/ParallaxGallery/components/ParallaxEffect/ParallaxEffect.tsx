@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import ParallaxProps from "./ParallaxEffectProps";
+import ParallaxEffectProps from "./ParallaxEffectProps";
 import styles from "./Parallax.module.scss";
 import useParallaxEffect from "./hooks/useParallaxEffect";
 
-const Parallax = (props: ParallaxProps) => {
+const ParallaxEffect = (props: ParallaxEffectProps) => {
   const { children, offset = 50, isEffectActive } = props;
   const ref = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -27,4 +27,4 @@ const Parallax = (props: ParallaxProps) => {
   );
 };
 
-export default Parallax;
+export default ParallaxEffect;
